@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Heissel ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    background:#f5e6d3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* CONTENEDOR */
+.container{
+    position:relative;
+    width:350px;
+    max-width:90%;
+}
+
+/* SOBRE */
+.envelope{
+    position:relative;
+    width:100%;
+    height:220px;
+    background:#e8d8c3;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* CORAZÓN */
+.heart{
+    position:absolute;
+    width:60px;
+    height:60px;
+    background:red;
+    top:80px;
+    left:50%;
+    transform:translateX(-50%) rotate(45deg);
+    animation:beat 1s infinite;
+}
+
+.heart::before,
+.heart::after{
+    content:"";
+    position:absolute;
+    width:60px;
+    height:60px;
+    background:red;
+    border-radius:50%;
+}
+
+.heart::before{
+    top:-30px;
+    left:0;
+}
+
+.heart::after{
+    left:-30px;
+    top:0;
+}
+
+@keyframes beat{
+    0%{transform:translateX(-50%) rotate(45deg) scale(1);}
+    50%{transform:translateX(-50%) rotate(45deg) scale(1.1);}
+    100%{transform:translateX(-50%) rotate(45deg) scale(1);}
+}
+
+/* CARTA */
+.card{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:500px;
+    background:white;
+    border-radius:10px;
+    padding:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.3);
+    transform:translateY(0);
+    transition:0.8s;
+    overflow-y:auto;
+    opacity:0;
+}
+
+/* ACTIVA */
+.container.open .card{
+    transform:translateY(-260px);
+    opacity:1;
+}
+
+/* TEXTO */
+.card h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.card p{
+    margin-bottom:15px;
+    line-height:1.6;
+    text-align:justify;
+}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+    .card{
+        height:450px;
+        padding:18px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container" onclick="openCard()">
+    <div class="envelope">
+        <div class="heart"></div>
+    </div>
+
+    <div class="card">
+        <h2>🌷🌷🌷</h2>
+        <p><strong>Heissel</strong></p>
+
+        <p>
+        Sé que estás pasando por un momento difícil, y aunque a veces no encuentre las palabras
+        perfectas para aliviar lo que sientes, quiero que sepas que quiero estar con vos en lo
+        bueno y en lo malo, en los días ligeros y en los días que pesan más de la cuenta.
+        </p>
+
+        <p>
+        Si algún día sentís que el mundo pesa demasiado, déjame cargar un poco contigo.
+        Si necesitas espacio, siempre podés volver a mí después. Siempre te esperaré
+        con los brazos abiertos.
+        </p>
+
+        <p>
+        Gracias por ser quien eres, incluso en tus días más grises.
+        Yo te quiero en tus días felices, pero también —y sobre todo—
+        en los días en los que necesitas más amor.
+        </p>
+
+        <p>
+        Aunque el mundo se pusiera en tu contra, aunque las cosas se complicaran,
+        aunque los días se volvieran oscuros… yo te sigo eligiendo a ti.
+        No por obligación, no por costumbre,
+        sino porque mi corazón así lo decide todos los días.
+        </p>
+
+        <p><strong>Siempre te voy a elegir.</strong></p>
+
+        <p>
+        Con cariño,<br>
+        Alejandro ❤️
+        </p>
+    </div>
+</div>
+
+<script>
+function openCard(){
+    document.querySelector(".container").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
